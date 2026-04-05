@@ -31,11 +31,28 @@
 
 <p class="question">{{question}}</p>
 
-<!-- Record Button (FIXED) -->
+<!-- INPUT MODE SWITCH -->
 
+{% if USE_MIC %}
+
+<!-- 🎤 MIC MODE (LOCAL) -->
 <form action="/record" method="GET">
     <button type="submit">🎤 Record Answer</button>
 </form>
+
+{% else %}
+
+<!-- ⌨️ TEXT MODE (LIVE SERVER) -->
+<form action="/record" method="POST">
+
+    <input type="text" name="answer" placeholder="Type your answer..." required>
+    <br><br>
+
+    <button type="submit">Submit Answer</button>
+
+</form>
+
+{% endif %}
 
 <!-- Answer + Feedback -->
 
