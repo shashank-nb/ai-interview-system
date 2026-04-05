@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Interview Preparation</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Interview Preparation Guide</h1>
+
+{% for item in qa %}
+
+<div class="result">
+
+<h3>{{item.question}}</h3>
+
+<p><strong>Suggested Answer:</strong></p>
+
+<p>{{item.answer}}</p>
+
+</div>
+
+{% endfor %}
+
+<a href="/">
+
+<button>Back to Home</button>
+
+</a>
+
+</div>
+
+</body>
+
+</html>

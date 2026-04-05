@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Interview Question</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Progress Section -->
+
+<div class="progress-section">
+
+<h2>Question {{q_number}} / {{total}}</h2>
+
+<div class="progress-bar">
+    <div class="progress" style="width: {{ progress }}%"></div>
+</div>
+
+<p>{{ progress }}% completed</p>
+
+</div>
+
+<!-- Question -->
+
+<p class="question">{{question}}</p>
+
+<!-- Record Button (FIXED) -->
+
+<form action="/record" method="GET">
+    <button type="submit">🎤 Record Answer</button>
+</form>
+
+<!-- Answer + Feedback -->
+
+{% if answer %}
+
+<div class="result">
+
+<h3>Your Answer</h3>
+<p>{{answer}}</p>
+
+<h3>Feedback</h3>
+<p>{{feedback}}</p>
+
+<h3>Confidence Score</h3>
+<p>{{score}}</p>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>

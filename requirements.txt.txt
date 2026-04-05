@@ -1,0 +1,6 @@
+flask
+speechrecognition
+textblob
+pyaudio
+reportlab
+gunicorn
